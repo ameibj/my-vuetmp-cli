@@ -1,7 +1,7 @@
 
-# ptgui
+# spa vue脚手架
 
-> 这是屏投哥PC版 UI
+> 这是目前完整的前端构建vue项目的脚手架
 
 ## Build Setup
 
