@@ -12,9 +12,10 @@ function resolve (dir) {
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
-  entry: {
+  /*entry: {
     app: './src/main.js'
-  },
+  },*/
+  entry: utils.entries(),
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
@@ -27,10 +28,20 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      // 自定义路径
+      'src': path.resolve(__dirname, '../src'),
     }
   },
   module: {
     rules: [
+      {
+        test: /\.css/,
+        loaders: ["style", "css"]
+      },
+      {
+         test: /\.scss$/,
+         loaders: ["style", "css", "sass"]
+      },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -39,7 +50,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        include: [resolve('src'), resolve('test')]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
