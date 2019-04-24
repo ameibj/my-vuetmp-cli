@@ -1,20 +1,6 @@
 
-# spa vue脚手架
+# 这是一个自定义vue脚手架 模板汇总的js
 
-> 这是目前完整的前端构建vue项目的脚手架
+> 分支下是对应的模板
 
-## Build Setup
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
